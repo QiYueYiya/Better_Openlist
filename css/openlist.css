@@ -144,25 +144,25 @@ div.left-toolbar-box svg.hope-icon:hover {
 .hope-ui-light .hope-c-PJLV-igScBhH-css,
 .hope-ui-light .hope-c-PJLV-ikSuVsl-css,
 .hope-ui-light .hope-c-PJLV-ieGWMbI-css {
-    background-color: rgba(var(--mio-main), 0.2) !important;
+    background-color: rgba(var(--mio-main), 0.6) !important;
     backdrop-filter: blur(5px);
 }
 
 
 .hope-ui-light div.hope-modal__content-container .hope-c-PJLV-iiBaxsN-css {
-    background-color: rgba(var(--mio-main), 0.2) !important;
+    background-color: rgba(var(--mio-main), 0.6) !important;
     backdrop-filter: blur(5px) !important;
 }
 
 
 .hope-ui-light div.hope-modal__content-container .hope-c-kvTTWD-hYRNAb-variant-filled {
-    background-color: rgba(var(--mio-main), 0.2) !important;
+    background-color: rgba(var(--mio-main), 0.6) !important;
     backdrop-filter: blur(5px) !important;
 }
 
 
 .hope-ui-light div.hope-modal__content-container .hope-c-PJLV-ikEIIxw-css {
-    background-color: rgba(var(--mio-main), 0.2) !important;
+    background-color: rgba(var(--mio-main), 0.6) !important;
     backdrop-filter: blur(5px) !important;
     padding: var(--hope-space-1) !important;
 }
@@ -193,13 +193,13 @@ div.left-toolbar-box svg.hope-icon:hover {
 .hope-ui-dark
   div.hope-modal__content-container
   .hope-c-kvTTWD-hYRNAb-variant-filled {
-    background-color: rgba(127, 127, 127, 0.1) !important;
+    background-color: rgba(95, 95, 95, 0.3) !important;
     backdrop-filter: blur(5px) !important;
 }
 
 
 .hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-ikEIIxw-css {
-    background-color: rgba(127, 127, 127, 0.1) !important;
+    background-color: rgba(95, 95, 95, 0.3) !important;
     backdrop-filter: blur(5px) !important;
     padding: var(--hope-space-1) !important;
 }
