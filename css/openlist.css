@@ -1,0 +1,210 @@
+/********************************************************** 全局设置 **********************************************************/
+:root {
+    --mio-main: 255, 255, 255;
+    --mio-text: 0, 0, 0;
+    /* 主题色 #1890ff 偏蓝 */
+    --mio-primary: 24, 144, 225;
+    /* 主题色50% #65b5ff 偏蓝 */
+    --mio-primary50: 101, 181, 255;
+    --mio-main-opacity: 0.3;
+    --hope-colors-info9: rgba(var(--mio-primary), 1);
+    --hope-colors-info4: rgba(var(--mio-primary), 1);
+    --hope-colors-info5: rgba(var(--mio-primary50), 1);
+    --hope-colors-info11: rgba(var(--mio-main), 1);
+
+    .hope-ui-dark {
+      --mio-main: 0, 0, 0;
+      --mio-text: 255, 255, 255;
+      --mio-main-opacity: 0.3;
+      --hope-colors-info9: rgba(var(--mio-primary), 1);
+      --hope-colors-info4: rgba(var(--mio-primary), 0.4);
+      --hope-colors-info5: rgba(var(--mio-primary50), 0.4);
+      --hope-colors-info11: rgba(var(--mio-primary50), 1);
+    }
+}
+
+/* 全局背景图片 */
+body {
+    background-image: url("https://image.qiyueyi.eu.org/openlist/background.webp");
+    /* 自动填充整个区域，保持比例 */
+    background-size: cover;
+    /* 居中显示 */
+    background-position: center;
+    /* 不重复 */
+    background-repeat: no-repeat;
+    /* 固定背景 */
+    background-attachment: fixed;
+}
+
+/**白天背景稍亮*/
+body.hope-ui-light::before {
+    filter: blur(3px) brightness(0.7);
+}
+
+/**夜间背景稍暗*/
+body.hope-ui-dark::before {
+    filter: blur(3px) brightness(0.3);
+}
+
+div#root {
+    position: relative;
+    z-index: 1;
+}
+
+/********************************************************** 登录页 **********************************************************/
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifJliWT-css,
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-igjRXTJ-css {
+    display: none;
+}
+
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ibiABng-css,
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ihWgyFw-css {
+    background-color: transparent;
+}
+
+/**登录框*/
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-iubUra-css,
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifjOQLV-css {
+    background-color: rgba(var(--mio-main), 0.5);
+    backdrop-filter: blur(5px);
+}
+
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-idKXllh-css a {
+    display: none;
+}
+/********************************************************** 主页 **********************************************************/
+/* 顶部 */
+div#root div.header {
+    background: transparent;
+}
+div#root div.header .header-left {
+    width: 40px;
+    height: 40px;
+}
+div#root div.header .header-right > button {
+    background: transparent;
+}
+div#root div.header svg {
+    color: rgba(var(--mio-primary));
+}
+
+/* 主页文件夹路径 */
+div#root div.body nav.nav {
+    background: transparent;
+}
+div#root div.body nav.nav::after {
+    background-color: transparent;
+}
+
+/* 文件夹、文件的图标颜色 */
+div.obj-box svg.hope-icon.hope-c-PJLV-ibncvoH-css {
+    color: rgba(var(--mio-primary));
+}
+
+/* 复选框背景颜色 未选中 */
+div.obj-box .hope-checkbox__control {
+    background-color: rgb(176, 179, 184) !important;
+}
+/* 复选框背景颜色 选中时 */
+div.obj-box .hope-checkbox__input:checked + .hope-checkbox__control {
+    background-color: rgba(var(--mio-primary)) !important;
+}
+/* 复选框的勾 选中时 */
+div.obj-box svg.hope-icon.hope-c-PJLV-ijhzIfm-css {
+    color: rgb(255, 255, 255);
+}
+
+/************************ 工具栏 ************************/
+/* 置顶工具栏 */
+div.left-toolbar-box,
+div.center-toolbar {
+    z-index: 1;
+}
+/* 工具栏区域 透明度+毛玻璃 */
+div.left-toolbar-box div.left-toolbar {
+    background-color: rgba(var(--mio-main), 0.6);
+    backdrop-filter: blur(5px);
+}
+/* 工具栏 图标:主题色 */
+div.left-toolbar-box div.left-toolbar svg.hope-icon,
+div.left-toolbar-box svg.hope-icon {
+    color: rgba(var(--mio-primary));
+}
+/* 工具栏 鼠标悬停 图标:白色 图标背景:主题色 */
+div.left-toolbar-box div.left-toolbar svg.hope-icon:hover,
+div.left-toolbar-box svg.hope-icon:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(var(--mio-primary));
+}
+
+/************************ 浅色模式 ************************/
+/* 文件夹列表 透明度+毛玻璃 */
+/* README.md 透明度+毛玻璃 */
+/* 未知 */
+.hope-ui-light .hope-c-PJLV-igScBhH-css,
+.hope-ui-light .hope-c-PJLV-ikSuVsl-css,
+.hope-ui-light .hope-c-PJLV-ieGWMbI-css {
+    background-color: rgba(var(--mio-main), 0.2) !important;
+    backdrop-filter: blur(5px);
+}
+
+/* 搜索主体 透明度+毛玻璃 */
+.hope-ui-light .hope-c-PJLV-iiBaxsN-css {
+    background-color: rgba(var(--mio-main), 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* 搜索栏输入框 透明度+毛玻璃 */
+.hope-ui-light .hope-c-kvTTWD-hYRNAb-variant-filled {
+    background-color: rgba(var(--mio-main), 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* 搜索按钮 透明度+毛玻璃 */
+.hope-ui-light .hope-c-PJLV-ikEIIxw-css {
+    background-color: rgba(var(--mio-main), 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    padding: var(--hope-space-1) !important;
+}
+
+/* 搜索列表 小号字体颜色:深黑色 */
+.hope-ui-light div.hope-modal__content-container .hope-c-PJLV-cfxjmx-size-xs {
+    color: rgba(var(--mio-text), 0.9) !important;
+}
+
+/************************ 深色模式 ************************/
+/* 文件夹列表 透明度+毛玻璃 */
+/* README.md 透明度+毛玻璃 */
+/* 未知 */
+.hope-ui-dark .hope-c-PJLV-iigjoxS-css,
+.hope-ui-dark .hope-c-PJLV-iiuDLME-css,
+.hope-ui-dark .hope-c-PJLV-ieGWMbI-css {
+    background-color: rgba(var(--mio-main), 0.6) !important;
+    backdrop-filter: blur(5px);
+}
+
+/* 搜索主体+毛玻璃 */
+.hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-iiBaxsN-css {
+    background-color: rgba(var(--mio-main), 0.6) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* 搜索栏+毛玻璃 */
+.hope-ui-dark
+  div.hope-modal__content-container
+  .hope-c-kvTTWD-hYRNAb-variant-filled {
+    background-color: rgba(127, 127, 127, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* 搜索按钮+毛玻璃 */
+.hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-ikEIIxw-css {
+    background-color: rgba(127, 127, 127, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    padding: var(--hope-space-1) !important;
+}
+
+/* 搜索列表 小号字体颜色:浅灰色 */
+.hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-cfxjmx-size-xs {
+    color: rgba(var(--mio-text), 0.9) !important;
+}

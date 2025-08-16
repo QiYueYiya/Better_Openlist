@@ -1,0 +1,49 @@
+name: Release Assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'css/**'
+      - 'js/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Remove comments from CSS and JS files
+        run: |
+            mkdir -p release/css release/js
+            # 处理 CSS 文件，只删除 /* ... */ 注释，不删除注释之间的代码
+            for file in css/*.css; do
+            sed -E 's:/\*[^*]*\*+([^/*][^*]*\*+)*/::g' "$file" > "release/$file"
+            done
+            # 处理 JS 文件，删除 // 注释和 /* ... */ 注释
+            for file in js/*.js; do
+            sed -E 's://.*$::g;s:/\*[^*]*\*+([^/*][^*]*\*+)*/::g' "$file" > "release/$file"
+            done
+
+      - name: Checkout releases branch
+        uses: actions/checkout@v4
+        with:
+          ref: releases
+          path: releases-branch
+
+      - name: Copy processed files to releases branch
+        run: |
+          cp -r release/css releases-branch/
+          cp -r release/js releases-branch/
+
+      - name: Commit and push to releases branch
+        run: |
+          cd releases-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add css js
+          git commit -m "Update release assets: remove comments"
+          git push origin releases
