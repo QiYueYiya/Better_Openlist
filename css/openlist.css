@@ -149,19 +149,19 @@ div.left-toolbar-box svg.hope-icon:hover {
 }
 
 /* 搜索主体 透明度+毛玻璃 */
-.hope-ui-light .hope-c-PJLV-iiBaxsN-css {
+.hope-ui-light div.hope-modal__content-container .hope-c-PJLV-iiBaxsN-css {
     background-color: rgba(var(--mio-main), 0.2) !important;
     backdrop-filter: blur(5px) !important;
 }
 
 /* 搜索栏输入框 透明度+毛玻璃 */
-.hope-ui-light .hope-c-kvTTWD-hYRNAb-variant-filled {
+.hope-ui-light div.hope-modal__content-container .hope-c-kvTTWD-hYRNAb-variant-filled {
     background-color: rgba(var(--mio-main), 0.2) !important;
     backdrop-filter: blur(5px) !important;
 }
 
 /* 搜索按钮 透明度+毛玻璃 */
-.hope-ui-light .hope-c-PJLV-ikEIIxw-css {
+.hope-ui-light div.hope-modal__content-container .hope-c-PJLV-ikEIIxw-css {
     background-color: rgba(var(--mio-main), 0.2) !important;
     backdrop-filter: blur(5px) !important;
     padding: var(--hope-space-1) !important;
