@@ -1,9 +1,46 @@
+
+:root {
+    --mio-main: 255, 255, 255;
+    --mio-text: 0, 0, 0;
+    
     --mio-primary: 24, 144, 225;
+    
+    --mio-primary50: 101, 181, 255;
+    --mio-main-opacity: 0.3;
+    --hope-colors-info9: rgba(var(--mio-primary), 1);
+    --hope-colors-info4: rgba(var(--mio-primary), 1);
+    --hope-colors-info5: rgba(var(--mio-primary50), 1);
+    --hope-colors-info11: rgba(var(--mio-main), 1);
+
+    .hope-ui-dark {
+      --mio-main: 0, 0, 0;
+      --mio-text: 255, 255, 255;
+      --mio-main-opacity: 0.3;
+      --hope-colors-info9: rgba(var(--mio-primary), 1);
+      --hope-colors-info4: rgba(var(--mio-primary), 0.4);
+      --hope-colors-info5: rgba(var(--mio-primary50), 0.4);
+      --hope-colors-info11: rgba(var(--mio-primary50), 1);
+    }
+}
+
+
 body {
     background-image: url("https://image.qiyueyi.eu.org/openlist/background.webp");
+    
+    background-size: cover;
+    
     background-position: center;
+    
+    background-repeat: no-repeat;
+    
     background-attachment: fixed;
 }
+
+
+body.hope-ui-light::before {
+    filter: blur(3px) brightness(0.7);
+}
+
 
 body.hope-ui-dark::before {
     filter: blur(3px) brightness(0.3);
@@ -14,6 +51,18 @@ div#root {
     z-index: 1;
 }
 
+
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifJliWT-css,
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-igjRXTJ-css {
+    display: none;
+}
+
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ibiABng-css,
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ihWgyFw-css {
+    background-color: transparent;
+}
+
+
 div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-iubUra-css,
 div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifjOQLV-css {
     background-color: rgba(var(--mio-main), 0.5);
@@ -23,6 +72,8 @@ div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifjOQLV-css {
 div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-idKXllh-css a {
     display: none;
 }
+
+
 div#root div.header {
     background: transparent;
 }
@@ -37,22 +88,58 @@ div#root div.header svg {
     color: rgba(var(--mio-primary));
 }
 
+
+div#root div.body nav.nav {
+    background: transparent;
+}
+div#root div.body nav.nav::after {
+    background-color: transparent;
+}
+
+
 div.obj-box svg.hope-icon.hope-c-PJLV-ibncvoH-css {
     color: rgba(var(--mio-primary));
+}
+
+
+div.obj-box .hope-checkbox__control {
+    background-color: rgb(176, 179, 184) !important;
 }
 
 div.obj-box .hope-checkbox__input:checked + .hope-checkbox__control {
     background-color: rgba(var(--mio-primary)) !important;
 }
+
+div.obj-box svg.hope-icon.hope-c-PJLV-ijhzIfm-css {
+    color: rgb(255, 255, 255);
+}
+
+
+
+div.left-toolbar-box,
+div.center-toolbar {
+    z-index: 1;
+}
+
 div.left-toolbar-box div.left-toolbar {
     background-color: rgba(var(--mio-main), 0.6);
     backdrop-filter: blur(5px);
 }
+
+div.left-toolbar-box div.left-toolbar svg.hope-icon,
+div.left-toolbar-box svg.hope-icon {
+    color: rgba(var(--mio-primary));
+}
+
 div.left-toolbar-box div.left-toolbar svg.hope-icon:hover,
 div.left-toolbar-box svg.hope-icon:hover {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(var(--mio-primary));
 }
+
+
+
+
 
 .hope-ui-light .hope-c-PJLV-igScBhH-css,
 .hope-ui-light .hope-c-PJLV-ikSuVsl-css,
@@ -61,14 +148,33 @@ div.left-toolbar-box svg.hope-icon:hover {
     backdrop-filter: blur(5px);
 }
 
+
+.hope-ui-light .hope-c-PJLV-iiBaxsN-css {
+    background-color: rgba(var(--mio-main), 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+
 .hope-ui-light .hope-c-kvTTWD-hYRNAb-variant-filled {
     background-color: rgba(var(--mio-main), 0.2) !important;
     backdrop-filter: blur(5px) !important;
 }
 
+
+.hope-ui-light .hope-c-PJLV-ikEIIxw-css {
+    background-color: rgba(var(--mio-main), 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    padding: var(--hope-space-1) !important;
+}
+
+
 .hope-ui-light div.hope-modal__content-container .hope-c-PJLV-cfxjmx-size-xs {
     color: rgba(var(--mio-text), 0.9) !important;
 }
+
+
+
+
 
 .hope-ui-dark .hope-c-PJLV-iigjoxS-css,
 .hope-ui-dark .hope-c-PJLV-iiuDLME-css,
@@ -77,12 +183,27 @@ div.left-toolbar-box svg.hope-icon:hover {
     backdrop-filter: blur(5px);
 }
 
+
+.hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-iiBaxsN-css {
+    background-color: rgba(var(--mio-main), 0.6) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+
 .hope-ui-dark
   div.hope-modal__content-container
   .hope-c-kvTTWD-hYRNAb-variant-filled {
     background-color: rgba(127, 127, 127, 0.1) !important;
     backdrop-filter: blur(5px) !important;
 }
+
+
+.hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-ikEIIxw-css {
+    background-color: rgba(127, 127, 127, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    padding: var(--hope-space-1) !important;
+}
+
 
 .hope-ui-dark div.hope-modal__content-container .hope-c-PJLV-cfxjmx-size-xs {
     color: rgba(var(--mio-text), 0.9) !important;
