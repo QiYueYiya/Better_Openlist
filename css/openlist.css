@@ -1,5 +1,8 @@
+    --mio-primary: 24, 144, 225;
 body {
     background-image: url("https://image.qiyueyi.eu.org/openlist/background.webp");
+    background-position: center;
+    background-attachment: fixed;
 }
 
 body.hope-ui-dark::before {
